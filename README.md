@@ -18,9 +18,9 @@ Basic usage
 package main
 
 import (
-    "fmt"
-    "log"
-    "github.com/Grapphy/shcaptcha"
+	"fmt"
+	"log"
+	"github.com/Grapphy/shcaptcha"
 )
 
 func main() {
@@ -31,12 +31,12 @@ func main() {
 	var sitekey string = "3ceb8624-1970-4e6b-91d5-70317b70b651"
 	var url string = "https://2captcha.com/demo/hcaptcha?difficulty=always-on"
 
-    solution, err := shcpt.BypassCaptcha(sitekey, url)
-    if err != nil {
-        log.Fatal(err)
-    }
+	solution, err := shcpt.BypassCaptcha(sitekey, url)
+	if err != nil {
+		log.Fatal(err)
+	}
     
-    fmt.Println(solution)
+	fmt.Println(solution)
 }
 ```
 
@@ -47,9 +47,9 @@ Using proxies
 package main
 
 import (
-    "fmt"
-    "log"
-    "github.com/Grapphy/shcaptcha"
+	"fmt"
+	"log"
+	"github.com/Grapphy/shcaptcha"
 )
 
 func main() {
@@ -57,18 +57,18 @@ func main() {
 	var shcpt *shcaptcha.Client = shcaptcha.NewClient(accessibility_cookie)
 	shcpt.SetUserAgent("Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0")
     
-    proxy := "http://host:port"
-    shcpt.SetProxy(proxy)
+	proxy := "http://host:port"
+	shcpt.SetProxy(proxy)
     
 	var sitekey string = "3ceb8624-1970-4e6b-91d5-70317b70b651"
 	var url string = "https://2captcha.com/demo/hcaptcha?difficulty=always-on"
     
-    solution, err := shcpt.BypassCaptcha(sitekey, url)
-    if err != nil {
-        log.Fatal(err)
-    }
+	solution, err := shcpt.BypassCaptcha(sitekey, url)
+	if err != nil {
+		log.Fatal(err)
+	}
     
-    fmt.Println(solution)
+	fmt.Println(solution)
 }
 ```
 
